@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: chatbot-nov29-1-gitops
+  description: This is GitOps manifest for chatbot-nov29-1   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: chatbot-nov29-1
+    janus-idp.io/tekton: chatbot-nov29-1 
+    backstage.io/kubernetes-id: chatbot-nov29-1 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:chatbot-nov29-1
